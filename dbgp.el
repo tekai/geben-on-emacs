@@ -667,10 +667,11 @@ It is saved for when this flag is not set.")
 
 (defadvice open-network-stream (around debugclient-pass-process-to-comint)
   "[comint hack] Pass the spawned DBGp client process to comint."
-  (let* ((buffer (ad-get-arg 1))
-	 (proc (buffer-local-value 'dbgp-buffer-process buffer)))
-    (set-process-buffer proc buffer)
-    (setq ad-return-value proc)))
+  (let ((buffer (ad-get-arg 1)))
+    (when (and (bufferp buffer) (not (stringp buffer)))
+      (let ((proc (buffer-local-value 'dbgp-buffer-process buffer)))
+        (set-process-buffer proc buffer)
+        (setq ad-return-value proc)))))
 
 (defun dbgp-comint-setup (proc string)
   "Setup a new comint buffer for a newly created session process PROC.
