@@ -1,5 +1,4 @@
 ;;; dbgp.el --- DBGp protocol interface
-;; $Id$
 ;; 
 ;; Filename: dbgp.el
 ;; Author: reedom <fujinaka.tohru@gmail.com>

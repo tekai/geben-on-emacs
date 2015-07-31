@@ -1,5 +1,4 @@
 ;;; geben.el --- DBGp protocol frontend, a script debugger
-;; $Id$
 ;; 
 ;; Filename: geben.el
 ;; Author: reedom <fujinaka.tohru@gmail.com>
