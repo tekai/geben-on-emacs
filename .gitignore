@@ -1,0 +1,5 @@
+*.elc
+*~
+/*.tar
+/*.tar.gz
+/.dir-locals.el
